@@ -31,7 +31,8 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.PulsanteAggiunta = new System.Windows.Forms.Button();
             this.PulsanteStampa = new System.Windows.Forms.Button();
-            this.TextBox1 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.PulsanteCancellazione = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView1
@@ -43,13 +44,14 @@
             this.listView1.Size = new System.Drawing.Size(496, 572);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // PulsanteAggiunta
             // 
             this.PulsanteAggiunta.Location = new System.Drawing.Point(56, 437);
             this.PulsanteAggiunta.Name = "PulsanteAggiunta";
-            this.PulsanteAggiunta.Size = new System.Drawing.Size(175, 50);
+            this.PulsanteAggiunta.Size = new System.Drawing.Size(115, 38);
             this.PulsanteAggiunta.TabIndex = 1;
             this.PulsanteAggiunta.Text = "Aggiungi";
             this.PulsanteAggiunta.UseVisualStyleBackColor = true;
@@ -57,29 +59,40 @@
             // 
             // PulsanteStampa
             // 
-            this.PulsanteStampa.Location = new System.Drawing.Point(417, 437);
+            this.PulsanteStampa.Location = new System.Drawing.Point(186, 437);
             this.PulsanteStampa.Name = "PulsanteStampa";
-            this.PulsanteStampa.Size = new System.Drawing.Size(175, 50);
+            this.PulsanteStampa.Size = new System.Drawing.Size(115, 38);
             this.PulsanteStampa.TabIndex = 2;
             this.PulsanteStampa.Text = "Stampa";
             this.PulsanteStampa.UseVisualStyleBackColor = true;
             this.PulsanteStampa.Click += new System.EventHandler(this.PulsanteStampa_Click);
             // 
-            // TextBox1
+            // textBox1
             // 
-            this.TextBox1.Location = new System.Drawing.Point(56, 92);
-            this.TextBox1.Multiline = true;
-            this.TextBox1.Name = "TextBox1";
-            this.TextBox1.Size = new System.Drawing.Size(536, 64);
-            this.TextBox1.TabIndex = 3;
-            this.TextBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            this.textBox1.Location = new System.Drawing.Point(56, 83);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(536, 62);
+            this.textBox1.TabIndex = 5;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // PulsanteCancellazione
+            // 
+            this.PulsanteCancellazione.Location = new System.Drawing.Point(317, 437);
+            this.PulsanteCancellazione.Name = "PulsanteCancellazione";
+            this.PulsanteCancellazione.Size = new System.Drawing.Size(115, 38);
+            this.PulsanteCancellazione.TabIndex = 6;
+            this.PulsanteCancellazione.Text = "Cancella";
+            this.PulsanteCancellazione.UseVisualStyleBackColor = true;
+            this.PulsanteCancellazione.Click += new System.EventHandler(this.PulsanteCancellazione_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1246, 637);
-            this.Controls.Add(this.TextBox1);
+            this.Controls.Add(this.PulsanteCancellazione);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.PulsanteStampa);
             this.Controls.Add(this.PulsanteAggiunta);
             this.Controls.Add(this.listView1);
@@ -96,7 +109,8 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button PulsanteAggiunta;
         private System.Windows.Forms.Button PulsanteStampa;
-        private System.Windows.Forms.TextBox TextBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button PulsanteCancellazione;
     }
 }
 

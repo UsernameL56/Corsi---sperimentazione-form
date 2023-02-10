@@ -30,15 +30,27 @@ namespace Corsi___sperimentazione
 
         private void PulsanteAggiunta_Click(object sender, EventArgs e)
         {
-            Aggiungi(array, ref indice, TextBox1.Text);
+            Aggiungi(array, ref indice, textBox1.Text);
+            
         }
 
-        private void TextBox1_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
- 
+
         }
 
         private void PulsanteStampa_Click(object sender, EventArgs e)
+        {
+            listView1.Clear();
+
+            for (int i = 0; i < indice; i++)
+            {
+                listView1.Items.Add(array[i]);
+            }
+                
+        }
+
+        private void PulsanteCancellazione_Click(object sender, EventArgs e)
         {
 
         }
@@ -53,6 +65,49 @@ namespace Corsi___sperimentazione
             array[indice] = nome;
             indice++;
         }
-       
+
+        public void Cancellazione(int[] a, int input, ref int indice)
+        {
+            //ciclo per trovare la posizione dell'elemento inserito
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (a[i] == input)
+                {
+                    //ripeti il ciclo fino a che non sono stati spostati tutti i numeri
+                    while (i < indice)
+                    {
+                        //nella posizione del numero che si vuole togliere, inserire il numero successivo fino a che non si raggiunge il massimo degli elementi inseriti
+                        a[i] = a[i + 1];
+                        i++;
+                    }
+                    //decremento dell'indice data la rimozione di uno degli elementi dell'array
+                    indice = indice - 1;
+                    //uscita dal ciclo
+                    break;
+                }
+            }
+        }
+
+        static bool Ricerca(string[] array, string input)
+        {
+            bool trovato = true;
+            //ciclo per controllare se l'elemento inserito è presente nell'array
+            for (int i = 0; i < array.Length; i++)
+            {
+                //in base all'input, avremo un output true o false
+                if (array[i] == input)
+                {
+                    trovato = true;
+                    //una volta trovato il numero esci dal ciclo
+                    break;
+                }
+                else
+                    trovato = false;
+            }
+            //ritorno in base all'input
+            return trovato;
+        }
+
+
     }
 }
