@@ -52,7 +52,16 @@ namespace Corsi___sperimentazione
 
         private void PulsanteCancellazione_Click(object sender, EventArgs e)
         {
+            if (Ricerca(array, textBox1.Text) == true)
+            {
+                Cancellazione(array, textBox1.Text, ref indice);
+                listView1.Clear();
 
+                for (int i = 0; i < indice; i++)
+                {
+                    listView1.Items.Add(array[i]);
+                }
+            }
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -66,7 +75,7 @@ namespace Corsi___sperimentazione
             indice++;
         }
 
-        public void Cancellazione(int[] a, int input, ref int indice)
+        public void Cancellazione(string[] a, string input, ref int indice)
         {
             //ciclo per trovare la posizione dell'elemento inserito
             for (int i = 0; i < a.Length; i++)
