@@ -31,11 +31,6 @@ namespace Corsi___sperimentazione
         private void PulsanteAggiunta_Click(object sender, EventArgs e)
         {
             Aggiungi(array, ref indice, textBox1.Text);
-            
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
         }
 
@@ -47,7 +42,7 @@ namespace Corsi___sperimentazione
             {
                 listView1.Items.Add(array[i]);
             }
-                
+
         }
 
         private void PulsanteCancellazione_Click(object sender, EventArgs e)
@@ -63,7 +58,19 @@ namespace Corsi___sperimentazione
                 }
             }
         }
+        private void PulsanteModifica_Click(object sender, EventArgs e)
+        {
+            if (Ricerca(array, textBox1.Text) == true)
+            {
+                listView1.Clear();
+                Modifica(array, textBox1.Text, textBox1.Text);
+            }
+        }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -117,6 +124,17 @@ namespace Corsi___sperimentazione
             return trovato;
         }
 
-
+        static void Modifica(string[] array, string input, string correzione)
+        {
+            //ciclo per controllare tutto l'array
+            for (int z = 0; z < array.Length; z++)
+            {
+                //arrivati alla posizione della parola errata modificarla con quella nuova inserita
+                if (array[z] == input)
+                {
+                    array[z] = correzione;
+                }
+            }
+        }
     }
 }
